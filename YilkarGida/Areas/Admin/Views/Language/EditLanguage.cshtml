@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Entities;
+
+@model Language
+@{
+    ViewData["Title"] = "EditLanguage";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Takım     Arkadaşı Ekle</h4>
+</div>
+<form method="post" class="form clearfix">
+    <input hidden asp-for="LanguageID" />
+    <input hidden asp-for="Status" />
+    <div>
+        <label>Dilin Kodu</label>
+        <input asp-for="Code" type="text" class="form-control" placeholder="Kod" />
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+

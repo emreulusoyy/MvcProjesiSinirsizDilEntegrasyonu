@@ -1,0 +1,170 @@
+﻿
+@using DtoLayer.Panel.Page;
+@model EditAboutDto
+
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Hakkımızda Sayfası Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="LanguageID" />
+    <div>
+        <label>Sayfa Adı</label>
+        <input asp-for="PageName" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sayfa Banner Alt Başlık</label>
+        <input asp-for="PageBannerSubtitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Hakkımızda Başlık</label>
+        <input asp-for="AboutTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Hakkımızda Açıklama</label>
+        <textarea asp-for="AboutDescription" class="form-control" rows="6"></textarea>
+    </div>
+    <br />
+
+    <div>
+        <label>Misyon Vizyon Ön Başlık</label>
+        <input asp-for="MissionPretitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Misyon Vizyon Başlık</label>
+        <input asp-for="MissionTitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Misyon Vizyon Açıklama</label>
+        <textarea asp-for="MissionDescription" class="form-control" rows="6"></textarea>
+    </div>
+    <br />
+    <div>
+        <label>Misyon Vizyon Kart 1</label>
+        <input asp-for="MissionDescriptionCard1" type="text" class="form-control"  />
+    </div>
+    <br />
+    <div>
+        <label>Misyon Vizyon Kart 2</label>
+        <input asp-for="MissionDescriptionCard2" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Misyon Vizyon Kart 3</label>
+        <input asp-for="MissionDescriptionCard3" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Misyon Vizyon Kart 4</label>
+        <input asp-for="MissionDescriptionCard4" type="text" class="form-control" />
+    </div>
+    <br />
+     <div>
+        <label>Takım Arkadaşları Başlık</label>
+        <input asp-for="EmployeeTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Takım Arkadaşları Alt Başlık</label>
+        <input asp-for="EmployeeSubtitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>İstatistik Ön Başlık</label>
+        <input asp-for="StatisticPretitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Başlık</label>
+        <input asp-for="StatisticTitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>İstatistik AÇıklama</label>
+        <textarea asp-for="StatisticDescription" class="form-control" rows="4"></textarea>
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Kategori 1</label>
+        <input asp-for="StatisticItemName1" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Değer 1</label>
+        <input asp-for="StatisticItemValue1" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Kategori 2</label>
+        <input asp-for="StatisticItemName2" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Değer 2</label>
+        <input asp-for="StatisticItemValue2" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Kategori 3</label>
+        <input asp-for="StatisticItemName3" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Değer 3</label>
+        <input asp-for="StatisticItemValue3" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Kategori 4</label>
+        <input asp-for="StatisticItemName4" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Değer 4</label>
+        <input asp-for="StatisticItemValue4" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Kategori 5</label>
+        <input asp-for="StatisticItemName5" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İstatistik Değer 5</label>
+        <input asp-for="StatisticItemValue5" type="text" class="form-control" />
+    </div>
+    <hr width="100%" color= "red" size="4">
+
+    <div>
+        <label>Banner Resmi</label>
+        <input asp-for="BannerImage" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Hakkımda Resmi</label>
+        <input asp-for="AboutImage" type="file" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+
+
+

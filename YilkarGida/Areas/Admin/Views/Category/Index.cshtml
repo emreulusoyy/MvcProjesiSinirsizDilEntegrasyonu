@@ -1,0 +1,64 @@
+﻿@using DtoLayer.Panel.Category;
+@using EntityLayer.Entities;
+@model List<CategoryListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Kategori Listesi</h4>
+</div>
+<div class="table-responsive">
+    <table style="color:white" class="table table-bordered mb-5 mt-2">
+        <thead>
+            <tr>
+                <td width="0%"> ID </td>
+                <td width="100%">Kategori</td>
+                <td width="0%"> Durum </td>
+                <td width="0%"> Güncelle </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        @item.CategoryID
+                    </td>
+                    <td> @item.CategoryName </td>
+                    <td>
+                        @if (item.Status)
+                        {
+                            <a class="btn btn-success" href="/Admin/Category/ToggleCategoryStatus/@item.CategoryID">Kapat</a>
+                        }else
+                        {
+                            <a class="btn btn-danger" href="/Admin/Category/ToggleCategoryStatus/@item.CategoryID">Aç</a>
+                        }
+                        
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Güncelle </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+                                <h6 class="dropdown-header">Diller</h6>
+                                @foreach (var language in (List<Language>)ViewBag.Languages)
+                                {
+                                    <form asp-action="EditCategory" asp-area="Admin" asp-controller="Category" method="get">
+                                        <input hidden name="CategoryID" value="@item.CategoryID" />
+                                        <input hidden name="LanguageID" value="@language.LanguageID" />
+                                        <button class="dropdown-item" type="submit">@language.Code</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

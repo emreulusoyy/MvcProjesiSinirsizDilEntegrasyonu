@@ -1,0 +1,116 @@
+﻿@using DtoLayer.Panel.Page;
+@model EditContactDto
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">İletişim Sayfası Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="LanguageID"  />
+    <div>
+        <label>Sayfa Adı</label>
+        <input asp-for="PageName" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sayfa Banner Alt Başlık</label>
+        <input asp-for="PageBannerSubtitle" type="text" class="form-control"/>
+    </div>
+    <br />
+
+    <div>
+        <label>Bizimle İletişime Geçin</label>
+        <input asp-for="ContactUs" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sorunuz var mı?</label>
+        <input asp-for="HaveQuestion" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Adres Başlık</label>
+        <input asp-for="LabelAddress" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Adres</label>
+        <input asp-for="AddressValue" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Mail Başlık</label>
+        <input asp-for="LabelMail" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Mail</label>
+        <input asp-for="MailValue" type="email" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Telefon Başlık</label>
+        <input asp-for="LabelPhone" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Telefon</label>
+        <input asp-for="PhoneValue" type="tel" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>İsim Soyisim Yer Tutucu</label>
+        <input asp-for="PlaceholderFullname" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Konu Yer Tutucu</label>
+        <input asp-for="PlaceholderSubject" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Mail Yer Tutucu</label>
+        <input asp-for="PlaceholderMail" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Telefon Yer Tutucu</label>
+        <input asp-for="PlaceholderPhone" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Mesaj Yer Tutucu</label>
+        <input asp-for="PlaceholderMessage" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Gönder Butonu</label>
+        <input asp-for="SendButton" type="text" class="form-control" />
+    </div>
+    <hr width="100%" color="red" size="4">
+    <div>
+        <label>Banner Resmi</label>
+        <input asp-for="BannerImage" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Adres Iframe</label>
+        <textarea asp-for="AddresIframe" class="form-control" rows="4"></textarea>
+
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+

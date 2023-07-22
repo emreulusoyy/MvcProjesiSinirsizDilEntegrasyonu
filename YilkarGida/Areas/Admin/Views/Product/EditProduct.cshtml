@@ -1,0 +1,36 @@
+﻿@using DtoLayer.Panel.Product;
+
+@model EditProductDto
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div>
+    <h4 class="card-title">Ürün Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="ProductID" />
+    <input hidden asp-for="LanguageID" />
+    <div>
+        <label>Ürün Adı</label>
+        <input asp-for=ProductName type="text" class="form-control" placeholder="Ürün Adı" />
+    </div>
+    <br />
+    <div>
+        <label>Kategori</label>
+        @Html.DropDownListFor(m => m.CategoryID, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control" })
+    </div>
+    <hr width="100%" color="red" size="4">
+
+    <div>
+        <label>Ürün Resmi</label>
+        <input asp-for="CardImage" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+

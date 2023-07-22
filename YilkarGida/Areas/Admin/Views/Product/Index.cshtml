@@ -1,0 +1,82 @@
+﻿@using DtoLayer.Panel.Product;
+@using EntityLayer.Entities;
+
+@model List<ProductListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="clearfix">
+    <h4 class="card-title">Ürün Listesi</h4>
+    <a  class="btn btn-primary float-right" href="/Admin/Product/AddProduct">Ürün Ekle</a>
+</div>
+<br />
+
+
+<div class="table-responsive">
+    <table style="color:white" class="table table-bordered mb-5 mt-2">
+        <thead>
+            <tr>
+                <td width="0%"> ID </td>
+                <td width="50%"> Ürün </td>
+                <td width="50%"> Kategori </td>
+                <td width="0%"> Ürünler </td>
+                <td width="0%"> Sil </td>
+                <td width="0%"> Durum </td>
+                <td width="0%"> Güncelle </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        @item.ProductID
+                    </td>
+                    <td> @item.Name </td>
+                    <td> @item.CategoryName </td>
+                    <td> <a class="btn btn-secondary" href="/Admin/Product/SubproductList/@item.ProductID">Ürünler</a></td>
+                    <td> <a class="btn btn-danger" href="/Admin/Product/DeleteProduct/@item.ProductID">Sil</a></td>
+                    <td>
+                        @if (item.Status)
+                        {
+                            <a class="btn btn-success" href="/Admin/Product/ToggleProductStatus/@item.ProductID">Kapat</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-danger" href="/Admin/Product/ToggleProductStatus/@item.ProductID">Aç</a>
+                        }
+
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Güncelle </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+                                <h6 class="dropdown-header">Diller</h6>
+                                @foreach (var language in (List<Language>)ViewBag.Languages)
+                                {
+                                    <form asp-action="EditProduct" asp-area="Admin" asp-controller="Product" method="get">
+                                        <input hidden name="ProductID" value="@item.ProductID" />
+                                        <input hidden name="LanguageID" value="@language.LanguageID" />
+                                        <button class="dropdown-item" type="submit">@language.Code</button>
+                                    </form>
+                                }
+
+
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+

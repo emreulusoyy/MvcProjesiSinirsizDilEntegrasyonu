@@ -1,0 +1,42 @@
+﻿@using DtoLayer.Panel.Employee;
+
+@model AddEmployeeDto
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Takım     Arkadaşı Ekle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+
+    <div>
+        <label>Ünvan</label>
+        <input asp-for=Title type="text" class="form-control" placeholder="Ünvan" />
+    </div>
+    <br />
+    <div>
+        <label>Açıklama</label>
+        <textarea asp-for=Description class="form-control" placeholder="Açıklama"></textarea>
+    </div>
+    <br />
+    <hr width="100%" color="red" size="4">
+    <div>
+        <label>İsim Soyisim</label>
+        <input asp-for=Name type="text" class="form-control" placeholder="İsim Soyisim" />
+    </div>
+    <br />
+    <div>
+        <label>Banner Resmi</label>
+        <input asp-for=Image type="file" class="form-control" />
+    </div>
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Ekle</button>
+    </div>
+
+
+</form>
+
+

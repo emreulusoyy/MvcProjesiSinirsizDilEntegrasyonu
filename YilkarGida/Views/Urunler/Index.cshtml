@@ -1,0 +1,151 @@
+﻿@using DtoLayer.Web;
+@model ProductCategoryListDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LayoutFullLink.cshtml";
+}
+
+<section class="w3l-about-breadcrumb text-center" style="background-image: url(/UserImages/@Model.CategoryBannerImagePath)">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5" >
+        <div class="container py-lg-5 py-md-4">
+            <div class="w3breadcrumb-gids">
+                <div class="w3breadcrumb-left text-left">
+                    <h2 class="title AboutPageBanner">
+                        @Model.CategoryName
+                    </h2>
+                    <p class="inner-page-para mt-2">
+
+                    </p>
+                </div>
+                <div class="w3breadcrumb-right">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/Anasayfa/index/">Ana Sayfa</a></li>
+                        <li class="active"><span class="fas fa-angle-double-right mx-2"></span> @Model.CategoryName</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//breadcrumb-->
+<!--/-->
+<!--//-->
+<!--/popular-Courses-->
+<section class="w3l-courses" id="courses">
+    <div class="blog py-5">
+        <div class="container py-md-5 py-2">
+            <h3 class="title-w3l text-center">@Model.CategoryName </h3>
+
+            <div class="row">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-lg-3 col-md-6 item mt-5">
+                        <div class="card">
+                            <div class="card-header p-0 position-relative">
+                                <form method="get" asp-action="ProductList" asp-controller="Urunler">
+                                    <input hidden name="ProductID" value="@product.ProductID">
+                                    <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                    <button style="border:none; background:none; padding:0px" class="zoom d-block w-100">
+                                        <img class="card-img-bottom d-block w-100 h-100" src="/UserImages/@product.ProductCardImagePath"
+                                             alt="Card image cap">
+                                    </button>
+                                </form>
+                                
+
+                            </div>
+                            <div class="card-body course-details">
+                                <div class="price-review d-flex justify-content-between mb-1align-items-center">
+
+                                </div>
+                                <form method="get" asp-action="ProductList" asp-controller="Urunler">
+                                    <input hidden name="ProductID" value="@product.ProductID">
+                                    <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                    <button style="border:none; background:none;" >
+                                        <b>@product.ProductName</b>
+                                    </button>
+                                </form>
+                                
+                                <div class="course-meta mt-4">
+                                    <div class="meta-item course-lesson">
+                                        <span class="fas fa-users"></span>
+                                        <span class="meta-value"> @product.SubproductCount subproduct</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+                
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<!-- //move top -->
+<!-- Template JavaScript -->
+<script src="~/Edukator-Starter/assets/js/jquery-3.3.1.min.js"></script>
+<script src="~/Edukator-Starter/assets/js/theme-change.js"></script>
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<!-- disable body scroll which navbar is in active -->
+<!--/MENU-JS-->
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<!--//MENU-JS-->
+<script src="~/Edukator-Starter/assets/js/bootstrap.min.js"></script>

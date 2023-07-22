@@ -1,0 +1,423 @@
+﻿@using DtoLayer.Web;
+
+@model HomeViewModel
+
+@{
+      ViewData["Title"] = "Index";
+     Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<!doctype html>
+<html lang="en">
+
+
+<body>
+    <!--header-->
+    <!--/header-->
+    <!--/Banner-Start-->
+    <section class="bannerw3l-hnyv">
+        <div class="banner-layer">
+            <video autoplay muted loop id="myVideo">
+                <source src="~/1.mp4" type="video/mp4" />
+
+
+            </video>
+            <div class="main-content-top">
+                <div class="container">
+                    <div class="main-content">
+                        <!-- if logo is image enable this
+                        <a class="logo" href="index.html">
+                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                        </a> -->
+                        <h4>@Model.BannerPretitle</h4>
+                        <h3>@Model.BannerTitle <span class="inn-text"></span> </h3>
+                        <a href="/hakkinda/index/" class="btn btn-style transparant-btn mt-md-5 mt-4">@Model.BannerMoreButton</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/about-section -->
+    <section class="w3l-homeblock1" id="about">
+        <div class="midd-w3 py-5">
+            <div class="container py-lg-5 py-md-3">
+                <div class="row cwp23-grids align-items-center">
+                    <div class="col-lg-6">
+                        <h5 class="title-subw3hny">@Model.CategoryPretitle </h5>
+                        <h3 class="title-w3l">@Model.CategoryTitle <span class="inn-text"></span></h3>
+                        <h6 class="mt-md-4 mt-md-5 mt-4">
+                            @Model.CategorySubtitle
+                        </h6>
+                        <a href="/hakkinda/index/" class="btn btn-style btn-primary mt-lg-5 mt-4">@Model.CategoryMoreButton</a>
+                    </div>
+                    <div class="HomeAboutImages col-lg-6 mt-lg-0 mt-5 pl-lg-5">
+                        <div class="cwp23-text-cols row">
+                            <div class="column col-6">
+                                <div class="column-w3-img position-relative">
+                                    <a href="#">
+                                        <img src="/UserImages/@Model.CategoryImagePath1" alt=""
+                                             class="radius-image img-fluid">
+                                    </a>
+
+                                </div>
+                                <div class="column-w3-img position-relative mt-4">
+                                    <a href="#">
+                                        <img src="/UserImages/@Model.CategoryImagePath2" alt=""
+                                             class="radius-image img-fluid">
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="column-w3-img position-relative">
+                                    <a href="#">
+                                        <img src="/UserImages/@Model.CategoryImagePath3" alt=""
+                                             class="radius-image img-fluid">
+                                    </a>
+
+                                </div>
+                                <div class="column-w3-img position-relative mt-4">
+                                    <a href="#">
+                                        <img src="/UserImages/@Model.CategoryImagePath4" alt=""
+                                             class="radius-image img-fluid">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//about-section -->
+    <!--/home-stats-->
+    <section class="w3l-stats-main" id="stats">
+        <div class="container">
+            <div class="row stats-con py-lg-0 py-5">
+                <div class="col-lg-6 stats-content-right mb-lg-0 mb-lg-5 mb-2">
+                    <a href="#service" class="d-block zoom mt-5">
+                        <img src="/UserImages/@Model.InfoImagePath" alt=""
+                             class="img-fluid" />
+                    </a>
+                </div>
+                <div class="col-lg-6 stats-content-left pl-lg-5">
+
+                    <div class="stats_info counter_grid1 text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                        </div>
+                        <div class="stat-icon-des">
+
+                            <h4>
+                                @Model.InfoTitle1
+                            </h4>
+                            <p class="para-stat">
+                                @Model.InfoDescription1
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                            <p class="counter"></p>
+                        </div>
+                        <div class="stat-icon-des">
+
+                            <h4>@Model.InfoTitle2</h4>
+                            <p class="para-stat">
+                                @Model.InfoDescription2
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stats_info counter_grid text-left mt-lg-5 mt-4">
+                        <div class="icon stat-icon">
+                            <p class="counter"></p>
+                        </div>
+                        <div class="stat-icon-des">
+
+                            <h4>@Model.InfoTitle3</h4>
+                            <p class="para-stat">
+                                @Model.InfoDescription3
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//home-stats-->
+    <!--/popular-Courses-->
+    <section class="w3l-courses" id="courses">
+        <div class="blog py-5">
+            <div class="container py-md-5 py-2">
+                <h5 class="title-subw3hny text-center">@Model.ProductTitle</h5>
+                <h3 class="title-w3l text-center"> <span class="inn-text"></span></h3>
+
+                <div class="row">
+                    @if (Model.Category1.Status)
+                    {
+                        <div class="col-lg-4 col-md-6 item mt-5">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative">
+                                    <a href="#course-single" class="zoom d-block">
+                                        <img class="card-img-bottom d-block" src="/UserImages/@Model.Category1.CardImagePath"
+                                         alt="Card image cap">
+                                    </a>
+
+                                </div>
+                                <div class="card-body course-details">
+                                    <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                        <p></p>
+
+                                    </div>
+                                    <form method="get" asp-action="Index" asp-controller="Urunler">
+                                        <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                        <input hidden name="CategoryID" value="@Model.Category1.CategoryID">
+                                        <button style="background-color:transparent; border:0px" class="course-desc"><b>@Model.Category1.Name</b></button>
+                                    </form>
+
+                                    <div class="course-meta mt-4">
+                                        <div class="meta-item course-lesson">
+                                            <span class="fas fa-users"></span>
+                                            <span class="meta-value"> 68 incelenme</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    @if (Model.Category2.Status)
+                    {
+                        <div class="col-lg-4 col-md-6 item mt-5">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative">
+                                    <a href="#course-single" class="zoom d-block">
+                                        <img class="card-img-bottom d-block" src="/UserImages/@Model.Category2.CardImagePath"
+                                         alt="Card image cap">
+                                    </a>
+
+                                </div>
+                                <div class="card-body course-details">
+                                    <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                        <p></p>
+
+                                    </div>
+                                    <form method="get" asp-action="Index" asp-controller="Urunler">
+                                        <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                        <input hidden name="CategoryID" value="@Model.Category2.CategoryID">
+                                        <button style="background-color:transparent; border:0px" class="course-desc"><b>@Model.Category2.Name</b></button>
+                                    </form>
+                                    <div class="course-meta mt-4">
+                                        <div class="meta-item course-lesson">
+                                            <span class="fas fa-users"></span>
+                                            <span class="meta-value"> 68 incelenme</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    @if (Model.Category3.Status)
+                    {
+                        <div class="col-lg-4 col-md-6 item mt-5">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative">
+                                    <a href="#course-single" class="zoom d-block">
+                                        <img class="card-img-bottom d-block" src="/UserImages/@Model.Category3.CardImagePath"
+                                         alt="Card image cap">
+                                    </a>
+
+                                </div>
+                                <div class="card-body course-details">
+                                    <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                        <p></p>
+
+                                    </div>
+                                    <form method="get" asp-action="Index" asp-controller="Urunler">
+                                        <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                        <input hidden name="CategoryID" value="@Model.Category3.CategoryID">
+                                        <button style="background-color:transparent; border:0px" class="course-desc"><b>@Model.Category3.Name</b></button>
+                                    </form>
+                                    <div class="course-meta mt-4">
+                                        <div class="meta-item course-lesson">
+                                            <span class="fas fa-users"></span>
+                                            <span class="meta-value"> 68 incelenme</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    <div class="col-lg-2"></div>
+                    @if (Model.Category4.Status)
+                    {
+                        <div class="col-lg-4 col-md-6 item mt-5">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative">
+                                    <a href="#course-single" class="zoom d-block">
+                                        <img class="card-img-bottom d-block" src="/UserImages/@Model.Category4.CardImagePath"
+                                         alt="Card image cap">
+                                    </a>
+
+                                </div>
+                                <div class="card-body course-details">
+                                    <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                        <p></p>
+
+                                    </div>
+                                    <form method="get" asp-action="Index" asp-controller="Urunler">
+                                        <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                        <input hidden name="CategoryID" value="@Model.Category4.CategoryID">
+                                        <button style="background-color:transparent; border:0px" class="course-desc"><b>@Model.Category4.Name</b></button>
+                                    </form>
+                                    <div class="course-meta mt-4">
+                                        <div class="meta-item course-lesson">
+                                            <span class="fas fa-users"></span>
+                                            <span class="meta-value"> 68 incelenme</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    @if (Model.Category5.Status)
+                    {
+                        <div class="col-lg-4 col-md-6 item mt-5">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative">
+                                    <a href="#course-single" class="zoom d-block">
+                                        <img class="card-img-bottom d-block" src="/UserImages/@Model.Category5.CardImagePath"
+                                         alt="Card image cap">
+                                    </a>
+
+                                </div>
+                                <div class="card-body course-details">
+                                    <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                                        <p></p>
+
+                                    </div>
+                                    <form method="get" asp-action="Index" asp-controller="Urunler">
+                                        <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                                        <input hidden name="CategoryID" value="@Model.Category5.CategoryID">
+                                        <button style="background-color:transparent; border:0px" class="course-desc"><b>@Model.Category5.Name</b></button>
+                                    </form>
+                                    <div class="course-meta mt-4">
+                                        <div class="meta-item course-lesson">
+                                            <span class="fas fa-users"></span>
+                                            <span class="meta-value"> 68 incelenme</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    <div class="col-lg-2"></div>
+
+
+
+                    <div class="mt-5 mx-auto text-more text-center pt-lg-4">
+                       @* <a href="courses.html" class="btn btn-style btn-primary">@Model.ProductViewAllButton</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w3l-project" id="subscribe">
+        <div class="container-fluid mx-lg-0">
+            <div class="row">
+                <div class="col-lg-6 bottom-info">
+                    <div class="project-header-section text-left">
+                        <h5 class="title-subw3hny text-left mb-1">@Model.ContactPretitle</h5>
+                        <h3 class="title-w3l">
+                            @Model.ContactTitle
+                        </h3>
+                        <p class="mt-3 pr-lg-5">@Model.ContactSubtitle</p>
+
+                        <form class="subscribe mt-5" method="post" asp-action="Subcribe" asp-controller="ContactMessage">
+                            <input type="email" name="email" placeholder="@Model.ContactJoinUsPlaceholder" required="">
+                            <input hidden name="LanguageID" value="@ViewBag.LanguageID">
+                            <button class="btn btn-style btn-primary">@Model.ContactSubcribeButton</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 subcribe-img" style="background-image:url(/UserImages/@Model.ContactImagePath)">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//subscribe-->
+    <!--/footer-->
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+    <!-- Template JavaScript -->
+    <script src="~/Edukator-Starter/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Edukator-Starter/assets/js/theme-change.js"></script>
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+    <!--/MENU-JS-->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!--//MENU-JS-->
+    <script src="~/Edukator-Starter/assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+﻿@using DtoLayer.Panel.Subproduct;
+
+@model EditSubproductDto
+
+@{
+    ViewData["Title"] = "EditSubproduct";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Alt Ürün Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="SubproductID" />
+    <input hidden asp-for="LanguageID" />
+    <div>
+        <label>Alt Ürün Adı</label>
+        <input asp-for=SubproductName type="text" class="form-control" placeholder="Ürün Adı" />
+    </div>
+    <br />
+    <div>
+        <label>Alt Ürün Detay</label>
+        <textarea class="form-control" asp-for="Detail" placeholder="Alt Ürün Detay"></textarea>
+    </div>
+    <br />
+    <div>
+        <label>Ürün</label>
+        @Html.DropDownListFor(m => m.ProductID, (List<SelectListItem>)ViewBag.Products, new { @class = "form-control" })
+    </div>
+    <hr width="100%" color="red" size="4">
+
+    <div>
+        <label>Alt Ürün Resmi</label>
+        <input asp-for="CardImage" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+

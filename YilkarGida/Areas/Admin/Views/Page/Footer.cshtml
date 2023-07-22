@@ -1,0 +1,126 @@
+﻿@using DtoLayer.Panel.Page;
+
+@model EditFooterDto
+
+@{
+    ViewData["Title"] = "Footer";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div>
+    <h4 class="card-title">Hakkımızda Sayfası Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" >
+    <input hidden asp-for="LanguageID" />
+    <div>
+        <label>Başlık</label>
+        <input asp-for="Title" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Açıklama</label>
+        <input asp-for="Description" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sayfalar Başlığı</label>
+        <input asp-for="PageTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Kategoriler Başlığı</label>
+        <input asp-for="CategoryTitle" type="text" class="form-control" />
+    </div>
+    <hr width="100%" color="red" size="4">
+    <div>
+        <label>Facebook Link</label>
+        <input asp-for="FacebookLink" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="float-left mr-3 ">
+            <input type="radio" id="Active" asp-for="FacebookStatus" value="True">
+            <label for="Active">Kullanımda</label>
+        </div>
+        <div>
+            <input type="radio" id="Pasive" asp-for="FacebookStatus" value="False">
+            <label for="Pasive">Kapalı</label><br>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br />
+    <div>
+        <label>Linkedin Link</label>
+        <input asp-for="LinkedinLink" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="float-left mr-3 ">
+            <input type="radio" id="Active" asp-for="LinkedinStatus" value="True">
+            <label for="Active">Kullanımda</label>
+        </div>
+        <div>
+            <input type="radio" id="Pasive" asp-for="LinkedinStatus" value="False">
+            <label for="Pasive">Kapalı</label><br>
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Twitter Link</label>
+        <input asp-for="TwitterLink" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="float-left mr-3 ">
+            <input type="radio" id="Active" asp-for="TwitterStatus" value="True">
+            <label for="Active">Kullanımda</label>
+        </div>
+        <div>
+            <input type="radio" id="Pasive" asp-for="TwitterStatus" value="False">
+            <label for="Pasive">Kapalı</label><br>
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Google Link</label>
+        <input asp-for="GoogleLink" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="float-left mr-3 ">
+            <input type="radio" id="Active" asp-for="GoogleStatus" value="True">
+            <label for="Active">Kullanımda</label>
+        </div>
+        <div>
+            <input type="radio" id="Pasive" asp-for="GoogleStatus" value="False">
+            <label for="Pasive">Kapalı</label><br>
+        </div>
+    </div>
+    <br />
+    <div>
+        <label>Pinterest Link</label>
+        <input asp-for="PinterestLink" type="text" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="float-left mr-3 ">
+            <input type="radio" id="Active" asp-for="PinterestStatus" value="True">
+            <label for="Active">Kullanımda</label>
+        </div>
+        <div>
+            <input type="radio" id="Pasive" asp-for="PinterestStatus" value="False">
+            <label for="Pasive">Kapalı</label><br>
+        </div>
+    </div>
+    <br />
+
+
+
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+
+

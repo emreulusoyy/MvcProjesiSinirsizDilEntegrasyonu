@@ -1,0 +1,162 @@
+﻿@using DtoLayer.Panel.Page;
+
+@model EditHomeDto
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Anasayfa Sayfası Güncelle</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="LanguageID" />
+    <div>
+        <label>Sayfa Adı</label>
+        <input asp-for="PageName" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sayfa Banner Ön Başlık</label>
+        <input asp-for="BannerPretitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Sayfa Banner Başlık</label>
+        <input asp-for="BannerTitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Banner Daha Fazla Butonu</label>
+        <input asp-for="BannerMoreButton" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Öne Çıkan Ön Başlık</label>
+        <input asp-for="CategoryPretitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Öne Çıkan Başlık</label>
+        <input asp-for="CategoryTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Öne Çıkan Alt Başlık</label>
+        <input asp-for="CategorySubtitle" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Öne Çıkan Daha Fazla Butonu</label>
+        <input asp-for="CategoryMoreButton" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgi Başlık 1</label>
+        <input asp-for="InfoTitle1" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgi Açıklama 1</label>
+        <input asp-for="InfoDescription1" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgi Başlık 2</label>
+        <input asp-for="InfoTitle2" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgi Açıklama 2</label>
+        <input asp-for="InfoDescription2" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Bilgi Başlık 3</label>
+        <input asp-for="InfoTitle3" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgi Açıklama 3</label>
+        <input asp-for="InfoDescription3" type="text" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <label>Ürün Başlık</label>
+        <input asp-for="ProductTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Ürün Hepsini Gör Butonu</label>
+        <input asp-for="ProductViewAllButton" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İletişim Ön Başlık</label>
+        <input asp-for="ContactPretitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İletişim Başlık</label>
+        <input asp-for="ContactTitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İletişim Alt Başlık</label>
+        <input asp-for="ContactSubtitle" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bize Katılın Butonu</label>
+        <input asp-for="ContactJoinUsPlaceholder" type="text" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Abone Ol Butonu</label>
+        <input asp-for="ContactSubcribeButton" type="text" class="form-control" />
+    </div>
+    <hr width="100%" color="red" size="4">
+    <div>
+        <label>Öne Çıkan Resim 1</label>
+        <input asp-for="CategoryImagePath1" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Öne Çıkan Resim 2</label>
+        <input asp-for="CategoryImagePath2" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Öne Çıkan Resim 3</label>
+        <input asp-for="CategoryImagePath3" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Öne Çıkan Resim 4</label>
+        <input asp-for="CategoryImagePath4" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>Bilgilendirme Resim</label>
+        <input asp-for="InfoImagePath" type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label>İletişim Resim</label>
+        <input asp-for="ContactImagePath" type="file" class="form-control" />
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+    
+
+
+</form>
+

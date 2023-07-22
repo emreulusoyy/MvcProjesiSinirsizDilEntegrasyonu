@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Entities;
+@model List<Subscriber>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Abone Listesi</h4>
+</div>
+
+
+<div class="table-responsive">
+    <table style="color:white" class="table table-bordered mb-5 mt-2">
+        <thead>
+            <tr>
+                <td width="0%"> ID </td>
+                <td width="100%">Email</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        @item.SubscriberID
+                    </td>
+                    <td> @item.Email </td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+

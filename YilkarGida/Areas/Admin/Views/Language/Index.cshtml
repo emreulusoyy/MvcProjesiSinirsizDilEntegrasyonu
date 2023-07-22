@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Entities;
+
+@model List<Language>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="clearfix">
+    <h4 class="card-title">Dil Listesi Listesi</h4>
+    <a class="btn btn-primary float-right" href="/Admin/Language/AddLanguage">Dil Ekle</a>
+</div>
+
+
+<div class="table-responsive">
+    <table style="color:white" class="table table-bordered mb-5 mt-2">
+        <thead>
+            <tr>
+                <td width="0%"> ID </td>
+                <td width="100%">Code</td>
+                <td width="0%"> Durum </td>
+                <td width="0%"> Güncelle </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        @item.LanguageID
+                    </td>
+                    <td> @item.Code </td>
+                    <td>
+                        @if (item.Status)
+                        {
+                            <a class="btn btn-success" href="/Admin/Language/ToggleLanguageStatus/@item.LanguageID">Kapat</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-danger" href="/Admin/Language/ToggleLanguageStatus/@item.LanguageID">Aç</a>
+                        }
+
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="/Admin/Language/EditLanguage/@item.LanguageID">Güncelle</a>
+                    </td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+

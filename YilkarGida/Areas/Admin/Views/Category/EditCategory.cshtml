@@ -1,0 +1,34 @@
+﻿@using DtoLayer.Panel.Category;
+@model EditCategoryDto
+@{
+    ViewData["Title"] = "EditCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4 class="card-title">Kategori Listesi</h4>
+</div>
+<form method="post" class="form clearfix" enctype="multipart/form-data">
+    <input hidden asp-for="CategoryID" />
+    <div>
+        <label>Kategori Adı</label>
+        <input asp-for=Name type="text" class="form-control" placeholder="Kategori Adı" />
+    </div>
+    <hr width="100%" color="red" size="4">
+    <div>
+        <label>Banner Resmi</label>
+        <input asp-for=BannerImage type="file" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <label>Kart Resmi</label>
+        <input asp-for=CardImage type="file" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <button type="submit" class="float-right btn btn-primary">Güncelle</button>
+    </div>
+
+
+</form>
+
